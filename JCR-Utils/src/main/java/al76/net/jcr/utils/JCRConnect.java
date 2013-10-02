@@ -3,7 +3,6 @@ package al76.net.jcr.utils;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.jcr.Credentials;
-import javax.jcr.LoginException;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -14,7 +13,7 @@ import org.apache.jackrabbit.commons.JcrUtils;
  * Hello world!
  *
  */
-public class App {
+public class JCRConnect {
 
 	public static void main(String[] args) {
 		try {
@@ -25,8 +24,9 @@ public class App {
 			Session session = repos.login(cd);
 
 			System.out.println("Hello Session UserID: " + session.getUserID());
+
 		} catch (RepositoryException ex) {
-			Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(JCRConnect.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 }
